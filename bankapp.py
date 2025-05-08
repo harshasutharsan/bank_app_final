@@ -57,6 +57,7 @@ def create_account():
     acc_num = input("Enter new Account Number: ")
     if acc_num in accounts:
         print("Account number already exists.")
+        print("______🤧🤧______")
         return
     name = input("Enter Account Holder Name: ")
     acc_type = input("Enter Account Type (Savings/Current): ")
@@ -65,6 +66,7 @@ def create_account():
     accounts[acc_num] = {'name': name, 'type': acc_type, 'balance': balance, 'password': password}
     write_accounts(accounts)
     print("Account created successfully.")
+    print("________😍🔐✅________")
 
 def view_account(acc_num):
     accounts = read_accounts()
@@ -75,7 +77,8 @@ def view_account(acc_num):
         print(f"Account Type: {info['type']}")
         print(f"Balance: {info['balance']:.2f}")
     else:
-        print("Account not found.")
+        print("Account not found .")
+        print("________ 🤦‍♂️🤦‍♂️ ________")
 
 def modify_account(acc_num):
     accounts = read_accounts()
@@ -86,6 +89,7 @@ def modify_account(acc_num):
         accounts[acc_num]['type'] = acc_type
         write_accounts(accounts)
         print("Account modified successfully.")
+        print("________😉😉😉________")
     else:
         print("Account not found.")
 
@@ -95,6 +99,7 @@ def delete_account(acc_num):
         del accounts[acc_num]
         write_accounts(accounts)
         print("Account deleted successfully.")
+        print("_____👍😒_____")
     else:
         print("Account not found.")
 
@@ -108,6 +113,7 @@ def deposit(acc_num):
         write_accounts(accounts)
         append_transaction(acc_num, 'Deposit', amount)
         print("Deposit successful.")
+        print("_______😍✅👍_______")
     else:
         print("Account not found.")
 
@@ -120,10 +126,13 @@ def withdraw(acc_num):
             write_accounts(accounts)
             append_transaction(acc_num, 'Withdrawal', amount)
             print("Withdrawal successful.")
+            print("__________😍✅👍__________")
         else:
             print("Insufficient balance.")
+            print("_________ 🤦‍♂️ 😢 _________")
     else:
         print("Account not found.")
+        print("_________ 🤦‍♂️ 😢 _________")
 
 #---------------------- Feedback ---------------------
 
@@ -131,6 +140,7 @@ def submit_feedback(acc_num):
     feedback = input("Enter your feedback: ")
     append_feedback(acc_num, feedback)
     print("Thank you for your feedback.")
+    print("________ ✅😍✅ ________")
 
 #--------------------- Admin panel -------------------
 
@@ -167,6 +177,7 @@ def admin_panel():
             break
         else:
             print("Invalid choice.")
+            print("______ 🤦‍♂️ 😢 ______")
 
 #--------------------- Customer panel ----------------------------
 
@@ -193,6 +204,7 @@ def customer_panel(acc_num):
             break
         else:
             print("Invalid choice.")
+            print("______ 🤦‍♂️ 😢 ______")
 
 #-------------------- Login functions ----------------------
 
@@ -201,16 +213,19 @@ def admin_login():
     password = input("Enter admin password: ")
     if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
         print("Admin login successful.")
+        print("-----😍🗿😍-----")
         admin_panel()
     else:
         print("Invalid admin credentials.")
+        print("____😯😯____")
 
 def customer_login():
     accounts = read_accounts()
     acc_num = input("Enter Account Number: ")
     password = input("Enter Password: ")
     if acc_num in accounts and accounts[acc_num]['password'] == password:
-        print("Customer login successful.")
+        print("Customer login successful.\n")
+        print("Well come Buddy😍😍😍")
         customer_panel(acc_num)
     else:
         print("Invalid account number or password.")
@@ -231,11 +246,14 @@ def main():
         elif choice == '2':
             customer_login()
         elif choice == '3':
-            print("Thank you for using the Mini Banking System.")
+            print("Thank You for Using M.B.S .")
+            print("----😍😍😍----")
             break
         else:
             print("Invalid choice.")
 
 if __name__ == "__main__":
     main()
+# just try===============================================================
 
+# test
